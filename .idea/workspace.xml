@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="0341ec9f-0954-4379-9b87-ddbdab3a4967" name="Changes" comment="" />
+    <list default="true" id="0341ec9f-0954-4379-9b87-ddbdab3a4967" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/assets/bird/0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/assets/bird/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/assets/terrain/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/assets/terrain/down_pipe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/assets/terrain/ground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/assets/terrain/up_pipe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/bird.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/game.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/pipe.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/NECCFlappyBirdGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NECCFlappyBirdGame.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,22 +28,74 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "trbail01"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/trbail01/NECCFlappyBirdGame.git",
+    "accountId": "75446006-b420-48ad-b355-91b1eb828465"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 6
 }]]></component>
   <component name="ProjectId" id="2p2QV8tBnmY4NdR8M5KRiZIQ0c2" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.bird.executor": "Run",
+    "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/trevorb/PycharmProjects/NECCFlappyBirdGame/Py-Flappy-Bird/assets/terrain"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\trevorb\PycharmProjects\NECCFlappyBirdGame\Py-Flappy-Bird\assets\terrain" />
+      <recent name="C:\Users\trevorb\PycharmProjects\NECCFlappyBirdGame\Py-Flappy-Bird\assets\bird" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NECCFlappyBirdGame" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Py-Flappy-Bird" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Py-Flappy-Bird/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
