@@ -66,31 +66,43 @@ class World:
                 self.passed = True
 
 # updates the bird's overall state
-    def update(self, player_event = None):
-        # new pipe adder
-        if self.current_pipe.rect.centerx  <= (WIDTH // 2) - pipe_size:
+    def update(self, player_event=None):
+        # Add a new pipe when needed
+        if self.current_pipe.rect.centerx <= (WIDTH // 2) - pipe_size:
             self._add_pipe()
-        # updates, draws pipes
+
+        # Update and draw pipes
         self.pipes.update(self.world_shift)
         self.pipes.draw(self.screen)
-        # applying game physics
+
+        # Apply physics
         self._apply_gravity(self.player.sprite)
         self._scroll_x()
         self._handle_collisions()
-        # configuring player actions
+
+        # Handle player events
         if player_event == "jump" and not self.game_over:
             player_event = True
         elif player_event == "restart":
             self.game_over = False
             self.pipes.empty()
             self.player.empty()
-            self.player.score = 0
+            self.player.sprite.score = 0
             self._generate_world()
         else:
             player_event = False
-        if not self.playing:
-            self.game.instructions()
-        # updates, draws pipes
+
+        # Display instructions if not playing
+        if not self.playing and not self.game_over:
+            bird = self.player.sprite
+            # Position the text above the bird
+            text_position = (bird.rect.centerx, bird.rect.top - 20)
+            self._render_text("Press SPACE to start", 24, (255, 255, 255), text_position)
+
+        # Update and draw player
         self.player.update(player_event)
         self.player.draw(self.screen)
+
+        # Show score
         self.game.show_score(self.player.sprite.score)
+

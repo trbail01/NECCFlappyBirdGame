@@ -11,9 +11,12 @@ pygame.display.set_caption("NECC Flappy Bird")
 class Main:
     def __init__(self, screen):
         self.screen = screen
+        icon = pygame.image.load('assets/misc/favicon.ico')
+        pygame.display.set_icon(icon)
         self.bg_img = pygame.image.load('assets/terrain/bg.png')
-        self.bg_img = pygame.transform.scale(self.bg_img, (WIDTH, HEIGHT))
+        self.bg_img = pygame.transform.scale(self.bg_img, (WIDTH, HEIGHT + 2))
         self.ground_img = pygame.image.load('assets/terrain/ground.png')
+        self.ground_img = pygame.transform.scale(self.ground_img, (WIDTH, self.ground_img.get_height()))
         self.ground_scroll = 0
         self.scroll_speed = -6
         self.FPS = pygame.time.Clock()
@@ -35,6 +38,13 @@ class Main:
                         world.update("jump")
                     if event.key == pygame.K_r:
                         world.update("restart")
+                elif event.type == pygame.MOUSEBUTTONDOWN:  # Fixed this block
+                    if not world.playing and not world.game_over:
+                        world.playing = True
+                    if event.button == 1:  # Left mouse click
+                        world.update("jump")
+                        print("Left mouse button clicked")
+
             world.update()
             self.screen.blit(self.ground_img, (self.ground_scroll, HEIGHT))
             if not self.stop_ground_scroll:
@@ -43,6 +53,7 @@ class Main:
                     self.ground_scroll = 0
             pygame.display.update()
             self.FPS.tick(60)
+
 
 if __name__ == "__main__":
     play = Main(screen)
