@@ -5,18 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0341ec9f-0954-4379-9b87-ddbdab3a4967" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/assets/bird/0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/assets/bird/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/assets/terrain/bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/assets/terrain/down_pipe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/assets/terrain/ground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/assets/terrain/up_pipe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/bird.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/game.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/pipe.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Py-Flappy-Bird/world.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/NECCFlappyBirdGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NECCFlappyBirdGame.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -28,21 +16,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "trbail01"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;trbail01&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/trbail01/NECCFlappyBirdGame.git",
-    "accountId": "75446006-b420-48ad-b355-91b1eb828465"
+    "accountId": "78905e74-f2d1-47d5-bb26-1b14248eb978"
   }
 }]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2p2QV8tBnmY4NdR8M5KRiZIQ0c2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -58,13 +46,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/trevorb/PycharmProjects/NECCFlappyBirdGame/Py-Flappy-Bird/assets/terrain"
+    "last_opened_file_path": "C:/Users/trevorb/PycharmProjects/NECCFlappyBirdGame/Py-Flappy-Bird/assets/bird",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\trevorb\PycharmProjects\NECCFlappyBirdGame\Py-Flappy-Bird\assets\terrain" />
       <recent name="C:\Users\trevorb\PycharmProjects\NECCFlappyBirdGame\Py-Flappy-Bird\assets\bird" />
+      <recent name="C:\Users\trevorb\PycharmProjects\NECCFlappyBirdGame\Py-Flappy-Bird\assets\terrain" />
     </key>
   </component>
   <component name="RunManager">
