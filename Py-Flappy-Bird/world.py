@@ -95,9 +95,7 @@ class World:
         # Display instructions if not playing
         if not self.playing and not self.game_over:
             bird = self.player.sprite
-            # Position the text above the bird
-            text_position = (bird.rect.centerx, bird.rect.top - 20)
-            self._render_text("Press SPACE to start", 24, (255, 255, 255), text_position)
+            self.game.instructions()
 
         # Update and draw player
         self.player.update(player_event)
