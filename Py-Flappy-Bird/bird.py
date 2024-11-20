@@ -7,7 +7,7 @@ class Bird(pygame.sprite.Sprite):
         super().__init__()
         # bird basic info
         self.frame_index = 0
-        self.animation_delay = 5 # WAS 3
+        self.animation_delay = 7 # WAS 3
         self.jump_move = -9
         # bird animation
         self.bird_img = import_sprite("assets/bird")
