@@ -87,7 +87,7 @@ class World:
             self.game_over = False
             self.pipes.empty()
             self.player.empty()
-            self.player.sprite.score = 0
+            self.player.score = 0
             self._generate_world()
         else:
             player_event = False

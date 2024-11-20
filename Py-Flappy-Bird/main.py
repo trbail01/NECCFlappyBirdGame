@@ -38,13 +38,6 @@ class Main:
                         world.update("jump")
                     if event.key == pygame.K_r:
                         world.update("restart")
-                elif event.type == pygame.MOUSEBUTTONDOWN:  # Fixed this block
-                    if not world.playing and not world.game_over:
-                        world.playing = True
-                    if event.button == 1:  # Left mouse click
-                        world.update("jump")
-                        print("Left mouse button clicked")
-
             world.update()
             self.screen.blit(self.ground_img, (self.ground_scroll, HEIGHT))
             if not self.stop_ground_scroll:
@@ -53,7 +46,6 @@ class Main:
                     self.ground_scroll = 0
             pygame.display.update()
             self.FPS.tick(60)
-
 
 if __name__ == "__main__":
     play = Main(screen)
