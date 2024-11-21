@@ -26,9 +26,9 @@ class GameIndicator:
         ins2 = self.inst_font.render(inst_text2, True, self.inst_color)
         self.screen.blit(ins1, (95, 400))
         self.screen.blit(ins2, (70, 450))
-    def endGameSprite(self):
+    def end_game_sprite(self):
 
-        pygame.display.set_caption("Load Image Example")
+        pygame.display.set_caption("NECC Flappy Bird")
         image = pygame.image.load('assets/misc/GameOver.png')
         original_width, original_height = image.get_size()
         new_width = int(original_width * 1.5)

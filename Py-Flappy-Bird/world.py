@@ -100,7 +100,7 @@ class World:
             bird = self.player.sprite
             self.game.instructions()
         if self.game_over:
-            self.game.endGameSprite()
+            self.game.end_game_sprite()
 
 
         # Update and draw player
