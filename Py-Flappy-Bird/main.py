@@ -38,6 +38,11 @@ class Main:
                         world.update("jump")
                     if event.key == pygame.K_r:
                         world.update("restart")
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    if not world.playing and not world.game_over:
+                        world.playing = True
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        world.update("jump")
             world.update()
             self.screen.blit(self.ground_img, (self.ground_scroll, HEIGHT))
             if not self.stop_ground_scroll:
