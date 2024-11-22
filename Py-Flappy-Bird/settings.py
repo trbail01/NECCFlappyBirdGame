@@ -7,16 +7,22 @@ from tarfile import fully_trusted_filter
 import pygame
 
 WIDTH, HEIGHT = 600, 650
-
-pipe_pair_sizes = [
-    (1,7),
+#Seperated pipe sizes for less randomness for game fairness.
+top_pipe_pair_sizes = [
+    (1.5,6.5),
     (2,6),
+
+]
+middle_pipe_pair_sizes = [
     (3,5),
     (4, 4),
     (5, 3),
-    (6, 2),
-    (7, 1)
 ]
+bottom_pipe_pair_sizes = [
+    (6, 2),
+    (6.5, 1.5)
+]
+
 
 pipe_size = HEIGHT // 10
 pipe_gap = (pipe_size * 2) + (pipe_size // 2);

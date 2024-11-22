@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0341ec9f-0954-4379-9b87-ddbdab3a4967" name="Changes" comment="Working a little better">
-      <change beforePath="$PROJECT_DIR$/.idea/NECCFlappyBirdGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NECCFlappyBirdGame.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0341ec9f-0954-4379-9b87-ddbdab3a4967" name="Changes" comment="11/22/2024&#10;Logic to make all pipes possible. &#10;Added logic to where if self.score = 0, the pipes are in a middle position. &#10;Added visual improvements to the score, instructions, and final text. &#10; &#10;Ideas:&#10;Highscore&#10;Main Menu&#10;Difficulty modes&#10;Sound with settings to turn on or off.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Py-Flappy-Bird/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Py-Flappy-Bird/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Py-Flappy-Bird/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Py-Flappy-Bird/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Py-Flappy-Bird/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/Py-Flappy-Bird/world.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +44,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.bird.executor": "Run",
-    "Python.main.executor": "Debug",
+    "Python.main.executor": "Run",
     "Python.pipe.executor": "Run",
     "Python.world.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -201,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732118567269</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="11/21/2024&#10;Added final score and additional reset instructors upon game end. &#10;Final score color is conditional to the final score. Red, Yellow, Green. &#10;&#10;Needs to be done: &#10;Logic to make all pipes possible. Some are too far away.&#10;First pipe is impossible 50% of the time because it is too low. Add logic to where if self.score == 0, the pipes have to be in a central position.&#10; &#10;Ideas:&#10;Main Menu&#10;Difficulty modes&#10;Sound&#10;Highscore">
+      <option name="closed" value="true" />
+      <created>1732253985229</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732253985229</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,7 +224,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Working a little better" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working a little better" />
+    <MESSAGE value="11/21/2024&#10;Added final score and additional reset instructors upon game end. &#10;Final score color is conditional to the final score. Red, Yellow, Green. &#10;&#10;Needs to be done: &#10;Logic to make all pipes possible. Some are too far away.&#10;First pipe is impossible 50% of the time because it is too low. Add logic to where if self.score == 0, the pipes have to be in a central position.&#10; &#10;Ideas:&#10;Main Menu&#10;Difficulty modes&#10;Sound&#10;Highscore" />
+    <MESSAGE value="11/22/2024&#10;Logic to make all pipes possible. &#10;Added logic to where if self.score = 0, the pipes are in a middle position. &#10;Added visual improvements to the score, instructions, and final text. &#10; &#10;Ideas:&#10;Highscore&#10;Main Menu&#10;Difficulty modes&#10;Sound with settings to turn on or off." />
+    <option name="LAST_COMMIT_MESSAGE" value="11/22/2024&#10;Logic to make all pipes possible. &#10;Added logic to where if self.score = 0, the pipes are in a middle position. &#10;Added visual improvements to the score, instructions, and final text. &#10; &#10;Ideas:&#10;Highscore&#10;Main Menu&#10;Difficulty modes&#10;Sound with settings to turn on or off." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
