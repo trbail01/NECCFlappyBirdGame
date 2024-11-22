@@ -3,7 +3,7 @@
 # bird.py
 import pygame
 from settings import import_sprite
-
+# This is a test
 class Bird(pygame.sprite.Sprite):
     def __init__(self, pos, size):
         super().__init__()
