@@ -23,7 +23,7 @@ class World:
         self.game_over = False
         self.passed = True
         self.game = GameIndicator(screen)
-
+        self.score = 0
     # adds pipe once the last pipe added reached the desired pipe horizontal spaces
     def _add_pipe(self):
         pipe_pair_size = random.choice(pipe_pair_sizes)
@@ -69,6 +69,7 @@ class World:
             bird = self.player.sprite
             if bird.rect.x >= self.current_pipe.rect.centerx:
                 bird.score += 1
+                self.score = bird.score
                 self.passed = True
 
 # updates the bird's overall state
@@ -104,6 +105,8 @@ class World:
             self.game.instructions()
         if self.game_over:
             self.game.end_game_sprite()
+            self.game.end_game_restart_text()
+            self.game.end_game_score_text(self.score)
 
 
         # Update and draw player
