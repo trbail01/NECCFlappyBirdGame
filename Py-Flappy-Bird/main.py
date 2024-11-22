@@ -1,3 +1,5 @@
+# Hello Java and Advanced C# Students at NECC. Please feel free to make any changes you would like
+# Please post any desired changes to the main branch and I will review them. Happy Coding!!!
 # main.py
 import pygame, sys
 from settings import WIDTH, HEIGHT, ground_space
