@@ -6,7 +6,7 @@ import pygame
 from pipe import Pipe
 from bird import Bird
 from game import GameIndicator
-from settings import WIDTH, HEIGHT, pipe_size, pipe_gap, pipe_pair_sizes
+from settings import WIDTH, HEIGHT, pipe_size, pipe_gap, top_pipe_pair_sizes, middle_pipe_pair_sizes, bottom_pipe_pair_sizes
 import random
 
 class World:
@@ -18,21 +18,69 @@ class World:
         self.current_pipe = None
         self.pipes = pygame.sprite.Group()
         self.player = pygame.sprite.GroupSingle()
-        self._generate_world()
         self.playing = False
         self.game_over = False
         self.passed = True
         self.game = GameIndicator(screen)
-
+        self.score = 0
+        self.pipe_options = [
+            self._add_top_pipe,
+            self._add_middle_pipe,
+            self._add_bottom_pipe
+        ]
+        self.game = GameIndicator(screen)
+        self._generate_world()
     # adds pipe once the last pipe added reached the desired pipe horizontal spaces
     def _add_pipe(self):
-        pipe_pair_size = random.choice(pipe_pair_sizes)
+        if self.score == 0:
+            # Middle pipe is spawned first
+            self._generate_pipe(middle_pipe_pair_sizes)
+            # Update pipe options for random selection
+            self.pipe_options = [
+                self._add_top_pipe,
+                self._add_middle_pipe,
+                self._add_bottom_pipe
+            ]
+        else:
+            # Choose a random pipe-generating method and call it
+            pipe_choice = random.choice(self.pipe_options)
+            pipe_choice()
+
+            # Dynamically adjust the pipe options based on the chosen pipe
+            if pipe_choice == self._add_top_pipe:
+                self.pipe_options = [
+                    self._add_top_pipe,
+                    self._add_middle_pipe
+                ]
+            elif pipe_choice == self._add_middle_pipe:
+                self.pipe_options = [
+                    self._add_top_pipe,
+                    self._add_middle_pipe,
+                    self._add_bottom_pipe
+                ]
+            elif pipe_choice == self._add_bottom_pipe:
+                self.pipe_options = [
+                    self._add_middle_pipe,
+                    self._add_bottom_pipe
+                ]
+
+    def _generate_pipe(self, pair_sizes):
+        pipe_pair_size = random.choice(pair_sizes)
         top_pipe_height, bottom_pipe_height = pipe_pair_size[0] * pipe_size, pipe_pair_size[1] * pipe_size
         pipe_top = Pipe((WIDTH, 0 - (bottom_pipe_height + pipe_gap)), pipe_size, HEIGHT, True)
         pipe_bottom = Pipe((WIDTH, top_pipe_height + pipe_gap), pipe_size, HEIGHT, False)
-        self.pipes.add(pipe_top)
-        self.pipes.add(pipe_bottom)
+        self.pipes.add(pipe_top, pipe_bottom)
         self.current_pipe = pipe_top
+
+
+    def _add_top_pipe(self):
+        self._generate_pipe(top_pipe_pair_sizes)
+
+    def _add_middle_pipe(self):
+        self._generate_pipe(middle_pipe_pair_sizes)
+
+    def _add_bottom_pipe(self):
+        self._generate_pipe(bottom_pipe_pair_sizes)
 
     # creates the player and the obstacle
     def _generate_world(self):
@@ -40,8 +88,7 @@ class World:
         bird = Bird((WIDTH//2 - pipe_size, HEIGHT//2 - pipe_size), 30)
         self.player.add(bird)
 
-
-    # for moving background/obstacle
+    #for moving background/obstacle
     def _scroll_x(self):
         if self.playing:
             self.world_shift = -6
@@ -69,6 +116,7 @@ class World:
             bird = self.player.sprite
             if bird.rect.x >= self.current_pipe.rect.centerx:
                 bird.score += 1
+                self.score = bird.score
                 self.passed = True
 
 # updates the bird's overall state
@@ -94,6 +142,7 @@ class World:
             self.pipes.empty()
             self.player.empty()
             self.player.score = 0
+            self.score = 0
             self._generate_world()
         else:
             player_event = False
@@ -104,6 +153,8 @@ class World:
             self.game.instructions()
         if self.game_over:
             self.game.end_game_sprite()
+            self.game.end_game_restart_text()
+            self.game.end_game_score_text(self.score)
 
 
         # Update and draw player
