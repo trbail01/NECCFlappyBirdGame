@@ -19,6 +19,10 @@ class GameIndicator:
         self.game_over_sound = pygame.mixer.Sound('assets/sounds/flappy-bird-fail-ringtonesms-tone-hd.mp3')
         self.game_over_sound.set_volume(0.5)  # Adjust volume
 
+    def play_game_over_sound(self):
+        #play the game over sound
+        self.game_over_sound()
+
     def show_score(self, int_score):
         bird_score = str(int_score)
         score = self.font.render(bird_score, True, self.color)
