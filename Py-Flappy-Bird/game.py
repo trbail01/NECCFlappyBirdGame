@@ -15,6 +15,10 @@ class GameIndicator:
         self.color = pygame.Color("black")
         self.inst_color = pygame.Color("black")
 
+        # Load the "game over" sound effect
+        self.game_over_sound = pygame.mixer.Sound('assets/sounds/')  # Replace with your sound file path
+        self.game_over_sound.set_volume(0.5)  # Adjust volume (optional)
+
     def show_score(self, int_score):
         bird_score = str(int_score)
         score = self.font.render(bird_score, True, self.color)
