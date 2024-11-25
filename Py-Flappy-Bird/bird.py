@@ -39,7 +39,6 @@ class Bird(pygame.sprite.Sprite):
     # to make the bird fly higher
     def _jump(self):
         self.direction.y = self.jump_move
-        print("Flapping") # want to play my sfx_wing.mp3 file here whenever the bird flaps
         self.flap_sound.play()
 
     # updates the bird's overall state
