@@ -1,1 +1,5 @@
 /.venv/
+/.idea
+/Py-Flappy-Bird/dist/
+/Py-Flappy-Bird/build/
+/Py-Flappy-Bird/main.spec
