@@ -11,8 +11,9 @@ class Pipe(pygame.sprite.Sprite):
         self.width = width
 
         # Randomly select a pipe image
-        pipe_number = random.randint(0, 4)
-        img_path = f'assets/terrain/newerPipe{pipe_number}.png'
+        #pipe_number = random.randint(0, 5)
+        #img_path = f'assets/terrain/newerPipe{pipe_number}.png'
+        img_path = 'assets/terrain/newerPipe2.png'
         self.image = pygame.image.load(img_path)
         self.image = pygame.transform.scale(self.image, (width, height))
 
