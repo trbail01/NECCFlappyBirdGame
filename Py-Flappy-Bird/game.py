@@ -16,7 +16,7 @@ class GameIndicator:
         self.inst_color = pygame.Color("black")
 
         # Load the "game over" sound effect
-        self.game_over_sound = pygame.mixer.Sound('assets/sounds/flappy-bird-fail-ringtonesms-tone-hd.mp3')
+        self.game_over_sound = pygame.mixer.Sound('assets/sounds/sfx_die.mp3')
         self.game_over_sound.set_volume(0.5)  # Adjust volume
 
     def play_game_over_sound(self):

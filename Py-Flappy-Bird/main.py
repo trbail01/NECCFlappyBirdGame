@@ -11,7 +11,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT + ground_space))
 pygame.display.set_caption("NECC Flappy Bird")
 
 # Load the "game over" sound effect
-game_over_sfx = pygame.mixer.Sound('assets/sounds/flappy-bird-fail-ringtonesms-tone-hd.mp3')  # Replace with the correct path to your sound file
+game_over_sfx = pygame.mixer.Sound('assets/sounds/sfx_die.mp3')
 game_over_sfx.set_volume(0.5)  # Adjust the volume if needed
 
 class Main:
