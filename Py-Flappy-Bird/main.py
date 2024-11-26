@@ -40,18 +40,31 @@ class Main:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+
+                # Handle key events
                 elif event.type == pygame.KEYDOWN:
                     if not world.playing and not world.game_over:
-                        world.playing = True
-                    if event.key == pygame.K_SPACE:
+                        # Start the game only when the SPACEBAR is pressed
+                        if event.key == pygame.K_SPACE:
+                            world.playing = True
+
+                    # Handle SPACEBAR jump during gameplay
+                    if event.key == pygame.K_SPACE and world.playing:
                         world.update("jump")
+
+                    # Restart the game if 'R' is pressed
                     if event.key == pygame.K_r:
                         world.update("restart")
                         sound_played = False  # Reset the sound flag when restarting
+
+                # Handle mouse events
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if not world.playing and not world.game_over:
+                        # Start the game when the mouse button is clicked
                         world.playing = True
-                    if event.type == pygame.MOUSEBUTTONDOWN:
+
+                    # Handle jump action on mouse click during gameplay
+                    if world.playing:
                         world.update("jump")
 
             # Play the game over sound once when game over

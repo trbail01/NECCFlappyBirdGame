@@ -54,7 +54,7 @@ class GameIndicator:
 
 
     def instructions(self):
-        inst_text1 = "Press SPACE or CLICK button to Jump"
+        inst_text1 = "Press SPACE or CLICK mouse to Jump"
         inst_text2 = "Press \"R\" Button to Restart Game"
 
         # Render the text
