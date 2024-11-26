@@ -114,8 +114,10 @@ class World:
         else:
             # if player pass through the pipe gaps
             bird = self.player.sprite
+            self.score_point_sound = pygame.mixer.Sound("assets/sounds/sfx_point.mp3") # load sfx asset
             if bird.rect.x >= self.current_pipe.rect.centerx:
                 bird.score += 1
+                self.score_point_sound.play()
                 self.score = bird.score
                 self.passed = True
 
