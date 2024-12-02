@@ -17,7 +17,12 @@ class GameIndicator:
 
         # Load the "game over" sound effect
         self.game_over_sound = pygame.mixer.Sound('assets/sounds/sfx_die.mp3')
-        self.game_over_sound.set_volume(0.5)  # Adjust volume
+        self.game_over_sound.set_volume(0.5)  # Dylan, you can adjust the volume
+
+        # This is for the sound effects of the bird making a score - DING!
+        def play_score_sound(self):
+            self.score_sound = pygame.mixer.Sound("assets/sounds/sfx_point.mp3")
+            self.score_sound.set_volume(0.5)  # Adjust volume as needed, Sir :)
 
     def play_game_over_sound(self):
         #play the game over sound

@@ -24,7 +24,7 @@ bottom_pipe_pair_sizes = [
 ]
 
 
-pipe_size = HEIGHT // 10
+pipe_size = HEIGHT // 9 #was 10
 pipe_gap = (pipe_size * 2) + (pipe_size // 2);
 ground_space = 50
 
