@@ -108,6 +108,10 @@ class World:
         if pygame.sprite.groupcollide(self.player, self.pipes, False, False) or bird.rect.bottom >= HEIGHT or bird.rect.top <= 0:
             self.playing = False
             self.game_over = True
+
+            # Switch to crash sprite of bird
+            bird.show_crash_sprite()
+
             # img_path = 'assets/misc/GameOver.png'
             # self.image = pygame.image.load(img_path)
             # print("Game over!")

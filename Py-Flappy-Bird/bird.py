@@ -11,14 +11,19 @@ class Bird(pygame.sprite.Sprite):
         super().__init__()
         # bird basic info
         self.frame_index = 0
-        self.animation_delay = 5 # WAS 7
+        self.animation_delay = 7 # WAS 7
         self.jump_move = -9
+
         # bird animation
         self.bird_img = import_sprite("assets/bird")
+        self.crash_img = pygame.image.load("assets/misc/JazzyFly_Crash.png") # Load the crash sprite
+        self.crash_img = pygame.transform.scale(self.crash_img, (size,size)) # scale to match bird size
+
         self.image = self.bird_img[self.frame_index]
         self.image = pygame.transform.scale(self.image, (size, size))
         self.rect = self.image.get_rect(topleft = pos)
         self.mask = pygame.mask.from_surface(self.image)
+
         # bird status
         self.direction = pygame.math.Vector2(0, 0)
         self.score = 0
@@ -40,6 +45,11 @@ class Bird(pygame.sprite.Sprite):
     def _jump(self):
         self.direction.y = self.jump_move
         self.flap_sound.play()
+
+    # Method for crashing bird sprite
+    def show_crash_sprite(self):
+        self.image = self.crash_img
+        self.mask = pygame.mask.from_surface(self.image)
 
     # updates the bird's overall state
     def update(self, is_jump):
