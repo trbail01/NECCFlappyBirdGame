@@ -14,7 +14,7 @@ class World:
         self.screen = screen
         self.world_shift = 0
         self.current_x = 0
-        self.gravity = 0.5
+        self.gravity = 0.5 #was .5
         self.current_pipe = None
         self.pipes = pygame.sprite.Group()
         self.player = pygame.sprite.GroupSingle()
