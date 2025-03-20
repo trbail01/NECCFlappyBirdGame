@@ -11,11 +11,11 @@ class Bird(pygame.sprite.Sprite):
         super().__init__()
         # bird basic info
         self.frame_index = 0
-        self.animation_delay = 7 # WAS 7
+        self.animation_delay = 3 # WAS 7
         self.jump_move = -9
 
         # bird animation
-        self.bird_img = import_sprite("assets/bird")
+        self.bird_img = import_sprite("assets/bird/new")
         self.crash_img = pygame.image.load("assets/misc/JazzyFly_Crash.png") # Load the crash sprite
         self.crash_img = pygame.transform.scale(self.crash_img, (size,size)) # scale to match bird size
 
