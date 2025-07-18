@@ -2,7 +2,7 @@
 # Please post any desired changes to the main branch and I will review them. Happy Coding!!!
 # settings.py
 from os import walk
-from tarfile import fully_trusted_filter
+#from tarfile import fully_trusted_filter
 
 import pygame
 
