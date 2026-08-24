@@ -10,7 +10,7 @@ GROUND_SPACE = 50
 FPS = 60
 SCROLL_SPEED = -6
 GRAVITY = 0.5
-BIRD_SIZE = 30
+BIRD_SIZE = (84, 60)
 BIRD_JUMP_VELOCITY = -9
 
 # Separated pipe sizes for fairer gameplay.
@@ -31,6 +31,7 @@ bottom_pipe_pair_sizes = [
 PIPE_SIZE = HEIGHT // 9
 PIPE_GAP = (PIPE_SIZE * 2) + (PIPE_SIZE // 2)
 PIPE_IMAGES = tuple(f"terrain/newerPipe{index}.png" for index in range(5))
+TOP_PIPE_IMAGES = ("terrain/newerPipe1.png", "terrain/newerPipe4.png")
 
 _ASSET_DIRECTORY = Path(__file__).resolve().parent / "assets"
 

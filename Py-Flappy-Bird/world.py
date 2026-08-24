@@ -13,6 +13,7 @@ from settings import (
     PIPE_IMAGES,
     PIPE_SIZE,
     SCROLL_SPEED,
+    TOP_PIPE_IMAGES,
     WIDTH,
     asset_path,
     bottom_pipe_pair_sizes,
@@ -70,20 +71,21 @@ class World:
         top_units, bottom_units = random.choice(pair_sizes)
         top_pipe_height = top_units * PIPE_SIZE
         bottom_pipe_height = bottom_units * PIPE_SIZE
-        image_path = random.choice(PIPE_IMAGES)
+        top_image_path = random.choice(TOP_PIPE_IMAGES)
+        bottom_image_path = random.choice(PIPE_IMAGES)
         pipe_top = Pipe(
             (WIDTH, -(bottom_pipe_height + PIPE_GAP)),
             PIPE_SIZE,
             HEIGHT,
             True,
-            image_path,
+            top_image_path,
         )
         pipe_bottom = Pipe(
             (WIDTH, top_pipe_height + PIPE_GAP),
             PIPE_SIZE,
             HEIGHT,
             False,
-            image_path,
+            bottom_image_path,
         )
         self.pipes.add(pipe_top, pipe_bottom)
         self.current_pipe = pipe_top
@@ -152,14 +154,14 @@ class World:
 
         is_jump = player_event == "jump" and self.playing and not self.game_over
 
+        self.pipes.draw(self.screen)
+        self.player.update(is_jump)
+        self.player.draw(self.screen)
+        self.game.show_score(self.player.sprite.score)
+
         if not self.playing and not self.game_over:
             self.game.instructions()
         if self.game_over:
             self.game.end_game_sprite()
             self.game.end_game_restart_text()
             self.game.end_game_score_text(self.score)
-
-        self.pipes.draw(self.screen)
-        self.player.update(is_jump)
-        self.player.draw(self.screen)
-        self.game.show_score(self.player.sprite.score)

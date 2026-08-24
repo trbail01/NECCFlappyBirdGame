@@ -47,40 +47,36 @@ class GameIndicator:
 
 
     def instructions(self):
-        inst_text1 = "Press SPACE or CLICK mouse to Jump"
-        inst_text2 = "Press \"R\" Button to Restart Game"
+        instructions = (
+            "Press SPACE or CLICK mouse to Jump",
+            'Press "R" Button to Restart Game',
+            "Press ESC to Exit Game",
+        )
+        y_start = HEIGHT - 195
+        padding = 10
 
-        # Render the text
-        ins1 = self.inst_font.render(inst_text1, True, self.inst_color)
-        ins2 = self.inst_font.render(inst_text2, True, self.inst_color)
-
-        # Calculate text dimensions for centering
-        ins1_width = ins1.get_width()
-        ins2_width = ins2.get_width()
-        ins_height = ins1.get_height() + 10  # Add padding
-
-        # Center positions
-        x_center1 = (WIDTH - ins1_width) // 2
-        x_center2 = (WIDTH - ins2_width) // 2
-        y_start = HEIGHT - 150  # Start near the bottom
-
-        # Draw white background rectangles for readability
-        bg_padding = 10
-        pygame.draw.rect(self.screen, pygame.Color("white"),
-                         (x_center1 - bg_padding, y_start - bg_padding, ins1_width + 2 * bg_padding, ins_height + 10))
-        pygame.draw.rect(self.screen, pygame.Color("white"),
-                         (x_center2 - bg_padding, y_start + ins_height + bg_padding, ins2_width + 2 * bg_padding, ins_height + 10))
-
-        # Draw text onto the screen
-        self.screen.blit(ins1, (x_center1, y_start))
-        self.screen.blit(ins2, (x_center2, y_start + ins_height + 20))
+        for index, instruction in enumerate(instructions):
+            text = self.inst_font.render(instruction, True, self.inst_color)
+            x_pos = (WIDTH - text.get_width()) // 2
+            y_pos = y_start + index * (text.get_height() + 20)
+            pygame.draw.rect(
+                self.screen,
+                pygame.Color("white"),
+                (
+                    x_pos - padding,
+                    y_pos - padding,
+                    text.get_width() + 2 * padding,
+                    text.get_height() + 2 * padding,
+                ),
+            )
+            self.screen.blit(text, (x_pos, y_pos))
 
 
     def end_game_sprite(self):
         self.screen.blit(self.game_over_image, (120, 150))
 
     def end_game_restart_text(self):
-        restart_text = "Press \"R\" To Restart The Game"
+        restart_text = 'Press "R" To Restart or ESC To Exit'
         restart = self.inst_font.render(restart_text, True, self.inst_color)
 
         # Calculate centered position

@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import pygame
 
-from settings import HEIGHT
+from settings import BIRD_SIZE, HEIGHT
 from world import World
 
 
@@ -29,7 +29,7 @@ class WorldTest(unittest.TestCase):
         world = World(self.screen)
         bird = world.player.sprite
 
-        self.assertTrue(all(frame.get_size() == (30, 30) for frame in bird.frames))
+        self.assertTrue(all(frame.get_size() == BIRD_SIZE for frame in bird.frames))
 
         bird.show_crash_sprite()
         bird.update(False)

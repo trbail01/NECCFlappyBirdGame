@@ -12,11 +12,11 @@ class Bird(pygame.sprite.Sprite):
         self.jump_move = BIRD_JUMP_VELOCITY
 
         self.frames = [
-            pygame.transform.scale(frame, (size, size))
+            pygame.transform.scale(frame, size)
             for frame in import_sprites("bird/new")
         ]
         crash_image = pygame.image.load(asset_path("bird/JazzyFly_Crash.png")).convert_alpha()
-        self.crash_img = pygame.transform.scale(crash_image, (size, size))
+        self.crash_img = pygame.transform.scale(crash_image, size)
 
         self.image = self.frames[self.frame_index]
         self.rect = self.image.get_rect(topleft=pos)

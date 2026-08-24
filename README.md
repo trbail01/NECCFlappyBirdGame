@@ -20,7 +20,7 @@ From the repository root:
 python Py-Flappy-Bird\main.py
 ```
 
-Press **Space** or click to flap. Press **R** to restart after a game over.
+Press **Space** or click to flap. Press **R** to restart after a game over, or **Esc** to exit.
 
 ## Tests
 

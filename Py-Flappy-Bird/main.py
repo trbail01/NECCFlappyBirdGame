@@ -30,6 +30,9 @@ class Main:
                     return
 
                 elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        return
+
                     if not world.playing and not world.game_over:
                         if event.key == pygame.K_SPACE:
                             world.playing = True
