@@ -2,31 +2,18 @@
 # Please post any desired changes to the main branch and I will review them. Happy Coding!!!
 # pipe.py
 import pygame
-import random
+from settings import scaled_image
 
 
 class Pipe(pygame.sprite.Sprite):
-    def __init__(self, pos, width, height, flip):
+    def __init__(self, pos, width, height, flip, image_path):
         super().__init__()
-        self.width = width
-
-        # Randomly select a pipe image
-        #pipe_number = random.randint(0, 5)
-        #img_path = f'assets/terrain/newerPipe{pipe_number}.png'
-        img_path = 'assets/terrain/newerPipe0.png'
-        self.image = pygame.image.load(img_path)
-        self.image = pygame.transform.scale(self.image, (width, height))
-
-        # Flip the pipe if specified
-        if flip:
-            flipped_image = pygame.transform.flip(self.image, False, True)
-            self.image = flipped_image
-
+        self.image = scaled_image(image_path, (width, height), flip)
         self.rect = self.image.get_rect(topleft=pos)
+        self.mask = pygame.mask.from_surface(self.image)
+        self.scored = False
 
-    # Update object position due to world scroll
     def update(self, x_shift):
         self.rect.x += x_shift
-        # Remove the pipe from the game when it leaves the screen
-        if self.rect.right < (-self.width):
+        if self.rect.right < 0:
             self.kill()

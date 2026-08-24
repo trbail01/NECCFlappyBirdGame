@@ -2,10 +2,10 @@
 # Please post any desired changes to the main branch and I will review them. Happy Coding!!!
 # game.py
 import pygame
-from settings import WIDTH, HEIGHT
-from settings import import_sprite
+from settings import HEIGHT, WIDTH, scaled_image
 
 pygame.font.init()
+
 
 class GameIndicator:
     def __init__(self, screen):
@@ -14,19 +14,7 @@ class GameIndicator:
         self.inst_font = pygame.font.SysFont('Bauhaus 93', 30)
         self.color = pygame.Color("black")
         self.inst_color = pygame.Color("black")
-
-        # Load the "game over" sound effect
-        self.game_over_sound = pygame.mixer.Sound('assets/sounds/sfx_die.mp3')
-        self.game_over_sound.set_volume(0.5)  # Dylan, you can adjust the volume
-
-        # This is for the sound effects of the bird making a score - DING!
-        def play_score_sound(self):
-            self.score_sound = pygame.mixer.Sound("assets/sounds/sfx_point.mp3")
-            self.score_sound.set_volume(0.5)  # Adjust volume as needed, Sir :)
-
-    def play_game_over_sound(self):
-        #play the game over sound
-        self.game_over_sound()
+        self.game_over_image = scaled_image("misc/GameOver.png", (350, 100))
 
     def show_score(self, int_score):
         bird_score = str(int_score)
@@ -89,10 +77,8 @@ class GameIndicator:
 
 
     def end_game_sprite(self):
-        pygame.display.set_caption("NECC Flappy Bird")
-        image = pygame.image.load('assets/misc/GameOver.png')
-        image = pygame.transform.scale(image, (350, 100))
-        self.screen.blit(image, (120,150))
+        self.screen.blit(self.game_over_image, (120, 150))
+
     def end_game_restart_text(self):
         restart_text = "Press \"R\" To Restart The Game"
         restart = self.inst_font.render(restart_text, True, self.inst_color)
